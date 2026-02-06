@@ -1,6 +1,6 @@
 services:
   backend:
-    build: .
+    build: ./backend/
     container_name: "backend_container"
     ports:
       - "8080:8080"
