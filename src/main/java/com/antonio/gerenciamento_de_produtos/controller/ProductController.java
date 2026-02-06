@@ -1,8 +1,10 @@
 package com.antonio.gerenciamento_de_produtos.controller;
 
-import com.antonio.gerenciamento_de_produtos.dto.RequestDTO;
+import com.antonio.gerenciamento_de_produtos.dto.RequestCreateProductDTO;
+import com.antonio.gerenciamento_de_produtos.dto.RequestUpdateProductDTO;
 import com.antonio.gerenciamento_de_produtos.entity.Product;
 import com.antonio.gerenciamento_de_produtos.service.ProductService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +22,7 @@ public class ProductController {
     }
 
     @PostMapping
-    public ResponseEntity<Product> create (@RequestBody RequestDTO request) {
+    public ResponseEntity<Product> create (@RequestBody @Valid RequestCreateProductDTO request) {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.create(request));
     }
 
@@ -35,7 +37,7 @@ public class ProductController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Product> updateById (@PathVariable long id, @RequestBody RequestDTO request) {
+    public ResponseEntity<Product> updateById (@PathVariable long id, @RequestBody @Valid RequestUpdateProductDTO request) {
         return ResponseEntity.status(HttpStatus.OK).body(service.update(id, request));
     }
 
