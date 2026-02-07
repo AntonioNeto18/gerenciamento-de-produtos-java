@@ -1,19 +1,38 @@
-# API de Gerenciamento de Produtos
+# Aplicação fullstack de Gerenciamento de Produtos
 
-Este repositório contém uma **API RESTful** construída com **Java**, **Spring Boot**, **JPA** e **H2 database**.  
+Este repositório contém uma **API RESTful** construída com **Java**, **Spring Boot**, **JPA** e **H2 database**, que é consumida por um frontend construído em **React**.
+
 Foi desenvolvida como parte dos meus estudos em Java, com foco no gerenciamento de produtos.
 
 ---
 
 ## Tecnologias utilizadas
 
+### Backend
+
 - Java 21
 - Spring Boot
 - Spring Web
 - Spring Data JPA
+- Validation
 - Banco de dados H2 (em memória)
 - Lombok
 - Maven
+
+### Frontend
+
+- Vite
+- JavaScript
+- NPM
+- React
+- React icons
+- React toastfy para alertas
+- Tailwind css
+
+### Infraestrutura
+
+- Docker
+- Docker compose
 
 ---
 
@@ -39,8 +58,7 @@ Foi desenvolvida como parte dos meus estudos em Java, com foco no gerenciamento 
 ---
 
 ## Pré-requisitos
-- Java 21
-- Maven
+- Docker e docker compose
 
 ---
 
@@ -56,16 +74,17 @@ Siga estas instruções para obter uma cópia do projeto funcionando em sua máq
 
 2.  **Execute o projeto**
     ```sh
-    mvn spring-boot:run
+    docker-compose up -d     # Para iniciar a aplicação.
+    docker-compose down      # Para parar a aplicação.
     ```
 
-A API estará disponível em `http://localhost:8080`.
+A aplicação estará disponível em `http://localhost`.
 
 ---
 
 ## Endpoints da API
 
-A API fornece os seguintes endpoints para interagir com os produtos.
+A API `http://localhost:8080` fornece os seguintes endpoints para interagir com os produtos.
 
 | Método | Endpoint              | Descrição                        | Corpo da requisição              |
 | :----- | :-------------------- | :------------------------------- | :------------------------------- |
