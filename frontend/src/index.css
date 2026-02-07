@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+:root {
+  /* This sets the default width for all toasts */
+  --toastify-toast-width: 700px; 
+}
