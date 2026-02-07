@@ -4,3 +4,12 @@ services:
     container_name: "backend_container"
     ports:
       - "8080:8080"
+  
+  frontend:
+    build: ./frontend/
+    container_name: "frontend_container"
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+  
